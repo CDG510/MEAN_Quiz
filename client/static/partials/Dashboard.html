@@ -1,0 +1,52 @@
+<div ng-controller = "DashboardController">
+
+<div class="container">
+    <div class='row col-md-12'>
+    	<h3>Trivia</h3>
+             <a ng-click="dashboard()">Dashboard</a> | <a ng-click="newQuestion()">add Question!</a> | <a href="#/" class="pull-right">Logout</a> 
+    </div>
+	<div class='row' id="header">
+		<h2 class="col-md-12">Welcome, {{user}}</h2>
+	</div>
+	<br>
+
+
+	<div class="jumbotron" >
+		<button ng-click="newQuiz()" class="btn btn-primary">Play!</button>
+		<label>Click the button to start the trivia game</label>
+	</div>
+
+	<span class="pull-right" style="color: green; margin-right: 20px;" ng-show="questionAddMessage"><h4>Successfully added your question!</h4></span>
+
+	<span class="pull-right" style="color: green; margin-right: 20px;" ng-show="testSuccess"><h4>Congrats on your test! you got {{currentTest.Score}}  ({{currentTest.Percentage}}) </h4></span>
+
+
+<input type="text" ng-model="filter_tests" >
+<label>Filter Tests</label>
+
+       <div class="row">
+		<table class="table table-striped">
+			<thead>
+				<th class="col-md-4">Name</th>
+				<th class="col-md-4">Score</th>
+				<th class="col-md-4">Percentage</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="test in Tests | filter: filter_tests | orderBy: '-Score' ">
+					<td>{{test.user}}</td>
+					<td>{{test.Score}}</td>
+					<td>{{test.Percentage}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+<!-- loop through tests -->
+
+		
+     
+
+
+	</div> 
+</div>

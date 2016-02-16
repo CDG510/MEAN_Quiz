@@ -1,0 +1,53 @@
+
+<div ng-controller = "quizController">
+
+<div class="container">
+	<div class='row' id="header">
+		<h2 class="col-md-12">Hi  {{user}}</h2>
+		<h4 class="col-md-12">Choose an answer for each of the questions and submit the test once done. Good luck!</h4>
+			
+	</div>
+	
+	<br>
+
+	<ol >
+	<form name="quizTime">
+		<li>
+
+		<li>
+			<h4>{{Questions[0].description}}</h4>
+				<input type="radio" ng-value="false" ng-model="quizAnswer1.answer"> <p>{{Questions[0].fake2}}</p>
+				<input type="radio"  ng-value="true" ng-model="quizAnswer1.answer"><p>{{Questions[0].answer}}</p>
+				<input type="radio" value="False"  ng-model="quizAnswer1.answer"><p>{{Questions[0].fake1}}</p>
+				<span class="pull-right" style="color: red; margin-right: 20px;" ng-show="needed"><h4>Need to have all forms filled!</h4></span>
+		</li>
+
+			<h4>{{Questions[1].description}}</h4>
+				<input type="radio" ng-value="false" ng-model="quizAnswer2.answer"> <p>{{Questions[1].fake2}}</p>
+				<input type="radio"  ng-value="true" ng-model="quizAnswer2.answer"><p>{{Questions[1].answer}}</p>
+				<input type="radio" value="False"  ng-model="quizAnswer2.answer"><p>{{Questions[1].fake1}}</p>
+				<span class="pull-right" style="color: red; margin-right: 20px;" ng-show="needed"><h4>Need to have all forms filled!</h4></span>
+		</li>
+
+		<li>
+			<h4>{{Questions[2].description}}</h4>
+				<input type="radio" ng-value="false" ng-model="quizAnswer3.answer"> <p>{{Questions[2].fake2}}</p>
+				<input type="radio"  ng-value="true" ng-model="quizAnswer3.answer"><p>{{Questions[2].answer}}</p>
+				<input type="radio" value="false"  ng-model="quizAnswer3.answer"><p>{{Questions[2].fake1}}</p>
+				<span class="pull-right" style="color: red; margin-right: 20px;" ng-show="needed"><h4>Need to have all forms filled!</h4></span>
+
+		</li>
+		
+
+		
+	</ol>
+	<div class="row col-md-4 pull-right">
+			<button class="btn btn-danger" ng-click="dashboard()">Cancel</button>
+			<button class='btn btn-success' ng-click="addTest()">Submit!</button>
+		</div>
+	</form>
+
+	
+
+	</div>
+</div>

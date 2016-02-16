@@ -1,0 +1,50 @@
+<div ng-controller = "QuestionController">
+
+<div class="container">
+
+	<div class="row">
+		<a ng-click="dashboard()">Dashboard</a> | <a ng-click="makeQuestion()">add Question!</a> | <a href="#/" class="pull-right">Logout</a> 
+	</div>
+	<div class="row">
+			<h1>make Question!</h1>
+	</div>
+	<br>
+	<form name="newQuestion">
+		<div class="row">
+			<h5>Your Question:</h5>
+			 <input type="text" name="questionName" ng-model="makeQuestion.description" class="col-md-8" ng-minlength='15' required>
+			<span class="pull-right error" style="color: red; margin-right: 20px;" ng-show="nameFail"><h4>Question must be over 15 characters!</h4></span>
+		</div>	
+		
+		<div class="row">
+			<h5>Correct Answer</h5>
+			 <input type="text" name="questionAnswer" ng-model="makeQuestion.correct" class="col-md-6" required>
+
+			 <span class="pull-right" style="color: red; margin-right: 20px;" ng-show="makeQuestion.questionAnswer.required"><h4>Can't leave this empty</h4></span>
+		</div>	  
+
+		<div class="row">
+			<h5>Fake Answer 1</h5>
+			 <input type="text" ng-model="makeQuestion.fakeAnswer1" name="fake1" class="col-md-6" required>
+			 <span class="pull-right" style="color: red; margin-right: 20px;" ng-show="makeQuestion.fake1.required"><h4>Can't leave this empty</h4></span>
+		</div>	 
+
+		<div class="row">
+			<h5>Fake Answer 2</h5>
+			 <input type="text" ng-model="makeQuestion.fakeAnswer2" name="fake2" class="col-md-6" required>
+			 <span class="pull-right" style="color: red; margin-right: 20px;" ng-show="makeQuestion.fake2.required"><h4>Can't leave this empty</h4></span>
+		</div>	 
+
+
+			<span class="pull-right" style="color: green; margin-right: 20px;" ng-show="success"><h4>Successfully added your question!</h4></span>
+
+
+		
+		<div class="row col-md-4 pull-right">
+			<button class="btn btn-danger" ng-click="dashboard()">Cancel</button>
+			<button class='btn btn-success' ng-click="addQuestion()">Submit!</button>
+		</div>
+	</form>
+	</div>
+</div>
+
